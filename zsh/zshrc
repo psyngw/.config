@@ -1,0 +1,45 @@
+# export ZSH="/root/.oh-my-zsh"
+# export PATH=/usr/local/bin:$PATH
+# modify TERM for autosuggestion plugin
+export TERM=xterm-256color
+
+ZSH_THEME="ys"
+
+# Plugins
+plugins=(
+        # git
+        zsh-autosuggestions
+        autojump
+        zsh-syntax-highlighting
+        hitokoto
+        extract
+	 )
+
+# source this file after plugins
+source $ZSH/oh-my-zsh.sh
+
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+function wrm () {
+    mv $1 .Trash
+    }
+alias gls="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+alias vim="nvim"
+alias ra="ranger"
+alias c="clear"
+alias ss="sudo !!"
+alias s="neofetch"
+export EDITOR="nvim"
+# add fzf
+# source $HOME/.fzf.zsh
+
+# fzf
+# export FZF_DEFAULT_OPTS='--bind=ctrl-t:top,change:top --bind ctrl-e:down,ctrl-u:up'
+# use ccat for preview: https://github.com/owenthereal/ccat/releases/download/v1.1.0/linux-amd64-1.1.0.tar.gz 
+export FZF_DEFAULT_OPTS='--preview "[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (ccat --color=always {} || highlight -O ansi -l {} || cat {}) 2> /dev/null | head -500"'
+# export FZF_DEFAULT_COMMAND='fd'
+# ag -> use "the_silver_searcher"
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_COMPLETION_TRIGGER='\'
+export FZF_TMUX=1
+export FZF_TMUX_HEIGHT='80%'
+export fzf_preview_cmd='[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (ccat --color=always {} || highlight -O ansi -l {} || cat {}) 2> /dev/null | head -500'
