@@ -26,8 +26,8 @@ alias gls="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset 
 alias vim="nvim"
 alias ra="ranger"
 alias c="clear"
-alias ss="sudo !!"
 alias s="neofetch"
+alias lg="lazygit"
 export EDITOR="nvim"
 # add fzf
 # source $HOME/.fzf.zsh
@@ -43,3 +43,7 @@ export FZF_COMPLETION_TRIGGER='\'
 export FZF_TMUX=1
 export FZF_TMUX_HEIGHT='80%'
 export fzf_preview_cmd='[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (ccat --color=always {} || highlight -O ansi -l {} || cat {}) 2> /dev/null | head -500'
+
+# source completion and key-bindings
+source ~/.config/zsh/completion.zsh
+source ~/.config/zsh/key-bindings.zsh
