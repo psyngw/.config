@@ -1,6 +1,7 @@
 echo "get gcc"
 apt-get -y gcc
 apt-get -y make
+# or [base-devel]
 
 echo "go to ~/Download"
 mkdir ~/Download && cd ~/Download
@@ -21,3 +22,9 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 echo "add neovim for python"
 pip3 install neovim
+
+echo "get compton in dwm"
+git clone https://github.com/chjj/compton
+
+echo "fastgit"
+git clone https://github.com/FastGitORG/fgit
