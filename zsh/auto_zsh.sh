@@ -1,3 +1,4 @@
+#! /bin/bash
 # source auto_reload.sh to run this file
 #
 

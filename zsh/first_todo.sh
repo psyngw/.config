@@ -12,6 +12,7 @@ apt-get -y upgrade
 
 echo "get the_silver_searcher"
 apt-get -y install silversearcher-ag
+pacman -S the_silver_searcher
 
 echo "get ccat"
 wget https://github.com/owenthereal/ccat/releases/download/v1.1.0/linux-amd64-1.1.0.tar.gz && tar -xvzf linux-amd64-1.1.0.tar.gz && mv ~/Download/linux-amd64-1.1.0/ccat /bin/ccat && rm -rf ~/Download/linux-amd64-1.1.0

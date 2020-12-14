@@ -22,15 +22,28 @@ source $ZSH/oh-my-zsh.sh
 function wrm () {
     mv $1 .Trash
     }
+function wgit () {
+        wget "https://gh.api.99988866.xyz/"$1
+}
 alias gls="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias vim="nvim"
 alias ra="ranger"
 alias c="clear"
 alias s="neofetch"
 alias lg="lazygit"
+alias e="extract"
 export EDITOR="nvim"
 # add fzf
 # source $HOME/.fzf.zsh
+
+# alias for proxy
+alias proxy_on='export all_proxy=socks5://127.0.0.1:23333'
+alias proxy_off='unset all_proxy'
+
+# alias for amixer: control audio
+alias vu='amixer set Master 5%+'
+alias vd='amixer set Master 5%-'
+alias vt='amixer set Master toggle'
 
 # fzf
 # export FZF_DEFAULT_OPTS='--bind=ctrl-t:top,change:top --bind ctrl-e:down,ctrl-u:up'
