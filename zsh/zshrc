@@ -3,7 +3,8 @@
 # modify TERM for autosuggestion plugin
 export TERM=xterm-256color
 
-ZSH_THEME="ys"
+# ZSH_THEME="ys"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Plugins
 plugins=(
@@ -11,7 +12,7 @@ plugins=(
         zsh-autosuggestions
         autojump
         zsh-syntax-highlighting
-        hitokoto
+        # hitokoto
         extract
 	 )
 
@@ -22,9 +23,19 @@ source $ZSH/oh-my-zsh.sh
 function wrm () {
     mv $1 .Trash
     }
+
+function wp () {
+    python3 ~/repo/pclip/pclips.py $1 $2
+    }
+
 function wgit () {
         wget "https://gh.api.99988866.xyz/"$1
 }
+
+function wps () {
+    ps -aux | grep -v grep | grep $1
+}
+
 alias gls="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias vim="nvim"
 alias ra="ranger"
