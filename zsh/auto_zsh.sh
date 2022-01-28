@@ -11,6 +11,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugi
 # hitokoto
 git clone https://github.com/derry96/hitokoto $ZSH_CUSTOM/plugins/hitokoto
 
+# zsh-vi-mode
+git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH/custom/plugins/zsh-vi-mode
+
 # autojump
 # install it with your system software like 'apt' or 'pacman'
 
@@ -29,3 +32,6 @@ echo "Remember to choose a font at https://github.com/ryanoasis/nerd-fonts !!!"
 
 # lazygit
 echo "Remember install at https://github.com/jesseduffield/lazygit"
+
+# npm
+echo "$ npm install cnpm -g --registry=https://r.npm.taobao.org"

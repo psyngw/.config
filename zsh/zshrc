@@ -1,4 +1,17 @@
-# export ZSH="/root/.oh-my-zsh"
+# p10k
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# check p10k theme
+[[ -d ~/.oh-my-zsh/custom/themes/powerlevel10k ]] || git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh || [[ ! -f ~/.config/zsh/p10k.zsh ]] || source ~/.config/zsh/p10k.zsh
+
+
+export ZSH="/home/warren/.oh-my-zsh"
 # export PATH=/usr/local/bin:$PATH
 # modify TERM for autosuggestion plugin
 export TERM=xterm-256color
@@ -14,6 +27,9 @@ plugins=(
         zsh-syntax-highlighting
         # hitokoto
         extract
+        # z
+        # vi-mode
+        zsh-vi-mode
 	 )
 
 # source this file after plugins
@@ -29,26 +45,59 @@ function wp () {
     }
 
 function wgit () {
-        wget "https://gh.api.99988866.xyz/"$1
+        # wget "https://gh.api.99988866.xyz/"$1
+        git clone ${1/https:\/\/github.com/https://hub.fastgit.org}
+}
+
+function calc () {
+  python3 -c "print($*)"
+}
+
+function wse () {
+  grep -nri $1 .
 }
 
 function wps () {
     ps -aux | grep -v grep | grep $1
 }
 
+function wpip () {
+  python3 /home/warren/repo/utils/wpip.py $1
+}
+
+function wdu () {
+  du -sh $* | sort -hr | head -n 15
+}
+
+# xprop for WM_INFO, xec for EVENT TEST
+function wxprop () {
+  xprop | awk '
+	/^WM_CLASS/{sub(/.* =/, "instance:"); sub(/,/, "\nclass:"); print}
+	/^WM_NAME/{sub(/.* =/, "title:"); print}'
+}
+
+setopt nonomatch
+
+alias wserver="python ~/scripts/FileServer.py"
 alias gls="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-alias vim="nvim"
+# alias vim="nvim"
+alias vi="nvim -u None -N"
 alias ra="ranger"
 alias c="clear"
 alias s="neofetch"
 alias lg="lazygit"
 alias e="extract"
+alias fra="pcmanfm"
 export EDITOR="nvim"
+export GO111MODULE="auto"
+export GOPROXY="https://goproxy.cn,direct"
 # add fzf
 # source $HOME/.fzf.zsh
+zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
 
 # alias for proxy
 alias proxy_on='export all_proxy=socks5://127.0.0.1:23333'
+alias polipo_on='export all_proxy=http://127.0.0.1:8123'
 alias proxy_off='unset all_proxy'
 
 # alias for amixer: control audio
@@ -71,3 +120,33 @@ export fzf_preview_cmd='[[ $(file --mime {}) =~ binary ]] && echo {} is a binary
 # source completion and key-bindings
 source ~/.config/zsh/completion.zsh
 source ~/.config/zsh/key-bindings.zsh
+
+# vi-mode cursor shape settings
+# # bindkey -v
+# bindkey -M vicmd 'V' edit-command-line
+# export KEYTIMEOUT=1
+#
+# # Change cursor with support for inside/outside tmux
+# function _set_cursor() {
+#     if [[ $TMUX = '' ]]; then
+#       echo -ne $1
+#     else
+#       echo -ne "\ePtmux;\e\e$1\e\\"
+#     fi
+# }
+#
+# function _set_block_cursor() { _set_cursor '\e[2 q' }
+# function _set_beam_cursor() { _set_cursor '\e[6 q' }
+#
+# function zle-keymap-select {
+#   if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
+#       _set_block_cursor
+#   else
+#       _set_beam_cursor
+#   fi
+# }
+# zle -N zle-keymap-select
+# # ensure beam cursor when starting new terminal
+# precmd_functions+=(_set_beam_cursor) #
+# # ensure insert mode and beam cursor when exiting vim
+# zle-line-init() { zle -K viins; _set_beam_cursor }
