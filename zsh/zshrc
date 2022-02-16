@@ -30,6 +30,7 @@ plugins=(
         # z
         # vi-mode
         zsh-vi-mode
+        git-open
 	 )
 
 # source this file after plugins
@@ -51,6 +52,10 @@ function wgit () {
 
 function calc () {
   python3 -c "print($*)"
+}
+
+function wrg () {
+  rg -i $1 .
 }
 
 function wse () {

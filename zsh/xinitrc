@@ -11,10 +11,12 @@ default_linemode devicons
 default_linemode devicons
 
 # compton -b
-compton --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc --unredir-if-possible &
+# compton --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc --unredir-if-possible &
+picom &
 ibus-daemon --xim &
 flameshot &
 utools &
+dunst &
 
 # exec /home/warren/other_repo/nord-and-light/.dwm/dwm
 exec dwm

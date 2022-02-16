@@ -8,3 +8,5 @@ ranger/plugins/__pycache__/*
 ranger/__pycache__/*
 !/zsh/
 !README.md
+!/alacritty/
+!/fontconfig/

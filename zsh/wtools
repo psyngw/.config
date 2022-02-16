@@ -1,0 +1,4 @@
+duf 替代df https://www.ruanyifeng.com/blog/2022/01/cli-alternative-tools.html
+ncdu 替代du
+diff-so-fancy 替代diff https://github.com/so-fancy/diff-so-fancy
+rg 替代grep
