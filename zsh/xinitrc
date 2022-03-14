@@ -19,4 +19,5 @@ utools &
 dunst &
 
 # exec /home/warren/other_repo/nord-and-light/.dwm/dwm
-exec dwm
+# exec dwm
+exec /bin/bash ~/startdwm
