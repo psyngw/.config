@@ -1,8 +1,10 @@
 /*
 /*/
+*.buffer
 
 !.gitignore
 !/tmux/
+/tmux/plugins
 !/ranger/
 ranger/plugins/__pycache__/*
 ranger/__pycache__/*
