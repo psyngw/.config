@@ -43,7 +43,7 @@ font:
     style: Bold Italic
 
   # 字大小
-  size: 14.0
+  size: 13.0
 
   offset:
     x: 0
@@ -53,6 +53,7 @@ font:
     y: 0
 
 window:
+  opacity: 0.8
   padding:
     x: 2
     y: 2
@@ -65,7 +66,7 @@ scrolling:
 
   multiplier: 10
 
-background_opacity: 0.6
+# background_opacity: 0.6 # use window.opacity now
   # 如果为‘true’，则使用亮色变体绘制粗体文本。
 #   draw_bold_text_with_bright_colors: true
 #
