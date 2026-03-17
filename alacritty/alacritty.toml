@@ -1,0 +1,84 @@
+[general]
+import = [
+    "~/.config/alacritty/argonaut.toml"
+]
+live_config_reload = true
+
+# [colors.bright]
+# black = "0x555555"
+# blue = "0xcaa9fa"
+# cyan = "0x8be9fd"
+# green = "0x50fa7b"
+# magenta = "0xff79c6"
+# red = "0xff5555"
+# white = "0xffffff"
+# yellow = "0xf1fa8c"
+#
+# [colors.normal]
+# black = "0x000000"
+# blue = "0xbd93f9"
+# cyan = "0x8be9fd"
+# green = "0x50fa7b"
+# magenta = "0xff79c6"
+# red = "0xff5555"
+# white = "0xbbbbbb"
+# yellow = "0xf1fa8c"
+#
+# [colors.primary]
+# background = "0x282a36"
+# foreground = "0xf8f8f2"
+
+[font]
+size = 13.0
+
+[font.bold]
+family = "JetBrainsMono NFP"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono NFP"
+style = "Bold Italic"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "JetBrainsMono NFP"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono NFP"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[scrolling]
+history = 100000
+multiplier = 10
+
+[window]
+opacity = 0.8
+
+[window.padding]
+x = 2
+y = 2
+
+[terminal]
+shell = "fish"
+
+[keyboard]
+bindings = [
+  { key = "j", mods = "Alt", action = "ScrollLineDown" },
+  { key = "k", mods = "Alt", action = "ScrollLineUp" },
+  { key = "j", mods = "Control|Alt", action = "ScrollPageDown" },
+  { key = "k", mods = "Control|Alt", action = "ScrollPageUp" },
+  { key = "]", mods = "Control", action = "ToggleViMode" },
+]
+
+# [[keyboard.bindings]]
+# key = "Return"
+# mods = "Shift"
+# chars = "\u001B\r"

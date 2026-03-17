@@ -12,3 +12,10 @@ ranger/__pycache__/*
 !README.md
 !/alacritty/
 !/fontconfig/
+
+# add flypy*.txt
+# !/ibus/
+# /ibus/*
+# !/ibus/rime
+# /ibus/rime/*
+# !/ibus/rime/flypy*.txt
